@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="phonebook">
 <head>
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="app.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body ng-controller="pbCtrl as vm">
 
-  <script src="app.js"></script>
+<h1>Superhero Phonebook</h1>
+
+<div class="new">
+  <p>Add a Hero:<input type="text" name="name" placeholder="Name" ng-model="vm.newHero.hero"></p>
+  <p>Number:<input type="text" name="number" placeholder="Number" ng-model="vm.newHero.number"></p>
+  <p>Image:<input type="text" name="photo_url" placeholder="Image URL" ng-model="vm.newHero.photo_url"></p>
+  <p>Affiliation:<input type="text" name="team" placeholder="Justice League, Avengers, etc" ng-model="vm.newHero.team"></p>
+  <button type="button" name="button" ng-click="vm.addHero()">Add Hero</button>
+</div>
+
+<div ng-repeat="hero in vm.heroes">
+  <p class="name">{{ hero.hero }}</p>
+  <p class="number">{{ hero.number }}</p>
+  <img ng-src="{{ hero.photo_url }}" alt="Hero image" />
+</div>
+
+
 </body>
 </html>
