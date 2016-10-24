@@ -18,9 +18,11 @@
   <p>Image:<input type="text" name="photo_url" placeholder="Image URL" ng-model="vm.newHero.photo_url"></p>
   <p>Affiliation:<input type="text" name="team" placeholder="Justice League, Avengers, etc" ng-model="vm.newHero.team"></p>
   <button type="button" name="button" ng-click="vm.addHero()">Add Hero</button>
+
+  <p> Search: <input type="text" ng-model="searchText"> </p>
 </div>
 
-<div ng-repeat="hero in vm.heroes">
+<div ng-repeat="hero in vm.heroes | filter:searchText">
   <p class="name">{{ hero.hero }}</p>
   <p class="number">{{ hero.number }}</p>
   <img ng-src="{{ hero.photo_url }}" alt="Hero image" />
