@@ -25,7 +25,8 @@
   <p ng-class="{'avengers': hero.team === 'Avengers', 'justice-league': hero.team ==='Justice League'}">{{ hero.hero }}</p>
   <p>{{ hero.number }}</p>
   <p>{{ hero.team }}</p>
-  <img ng-src="{{ hero.photo_url }}" alt="Hero image" />
+  <img ng-show="var" ng-src="{{ hero.photo_url }}" alt="Hero image"></img>
+  <button ng-click="toggleImage()">Click for Image</button>
 </div>
 
 

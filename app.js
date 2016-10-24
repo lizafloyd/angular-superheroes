@@ -15,4 +15,8 @@ angular
       this.heroes.push(hero)
       this.newHero = ''
     }
+    this.var = false;
+    this.toggleImage = function() {
+      this.var = !this.var
+    }
   }
